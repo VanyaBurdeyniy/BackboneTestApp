@@ -1,0 +1,74 @@
+html, body {
+  margin:0;
+  width:100%;
+  font-family:'Ubuntu', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px 30px 20px;
+
+  background: #4095e0;
+  background: -moz-linear-gradient(45deg, #4095e0 30%, #5db2e7 53%, #85c8ed 100%);
+  background: -webkit-linear-gradient(45deg, #4095e0 30%,#5db2e7 53%,#85c8ed 100%);
+  background: linear-gradient(45deg, #4095e0 30%,#5db2e7 53%,#85c8ed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4095e0', endColorstr='#85c8ed',GradientType=1 );
+
+  -webkit-box-shadow: 0 -25px 75px 17px rgba(99,99,99,0.55);
+  -moz-box-shadow: 0 -25px 75px 17px rgba(99,99,99,0.55);
+  box-shadow: 0 -25px 75px 17px rgba(99,99,99,0.55);
+
+}
+
+header h1 {
+  margin:0;
+  color:white;
+}
+.content {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.main-container {
+  width: 70%;
+  margin:auto;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
+}
+.search-block {
+  width: 70%;
+  margin:auto;
+  margin-bottom: 20px;
+}
+
+table {
+  width:100%;
+}
+  table thead {
+    text-align: left;
+  }
+   table thead th {
+     padding: 10px 8px 10px 8px;
+   }
+   table tbody tr td {
+     padding: 8px 8px 8px 8px;
+     border-top: 1px solid lightgrey;
+   }
+
+
+input {
+  padding: 8px;
+  border: 1px solid #DEDEDE;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  outline:none;
+}
+
+@media(max-width:768px) {
+  .main-container, .search-block {
+    width: 90%;
+  }
+}

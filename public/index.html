@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact list</title>
+    <link href="app/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container-header">
+        <h1>Contact List</h1>
+      </div>
+    </header>
+
+    <div class="content" id="">
+      <div class="search-block">
+        <input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
+      </div>
+      <div class="main-container" id="users"></div>
+    </div>
+
+    <script type="text/template" id="template-contacts">
+      <table class="media-list contacts-container order-table">
+        <thead>
+        <tr>
+          <th width="30%">Name</th>
+          <th width="35%">Phone Number</th>
+          <th width="35%">Email</th>
+        </tr>
+        </thead>
+      </table>
+    </script>
+
+    <script type="text/template" id="template-contact">
+      <td><%- name %></td>
+      <td><%- tel %></td>
+      <td><%- email %></td>
+    </script>
+
+
+
+
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/underscore/underscore.js"></script>
+    <script src="libs/backbone/backbone.js"></script>
+
+    <script src="app/js/app.js"></script>
+    <script src="app/js/models/contact.js"></script>
+    <script src="app/js/collections/contacts.js"></script>
+    <script src="app/js/views/contact.js"></script>
+    <script src="app/js/views/contacts.js"></script>
+    <script src="app/js/router.js"></script>
+    <script src="app/js/contactList.js"></script>
+    <script src="app/js/filter/filter.js"></script>
+  </body>
+</html>
