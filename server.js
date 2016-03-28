@@ -19,6 +19,34 @@ app.configure(function () {
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
+app.post('/sort', function(req, res) {
+
+    if (req.body.name == 'name') {
+        countries.sort(function(a, b){
+            if(a.name < b.name) return -1;
+            if(a.name > b.name) return 1;
+            return 0;
+        });
+    }
+
+    if (req.body.name == 'number') {
+        countries.sort(function(a, b){
+            if(a.tel < b.tel) return -1;
+            if(a.tel > b.tel) return 1;
+            return 0;
+        });
+    }
+
+    if (req.body.name == 'email') {
+        countries.sort(function(a, b){
+            if(a.email < b.email) return -1;
+            if(a.email > b.email) return 1;
+            return 0;
+        });
+    }
+    res.send(countries);
+});
+
 app.get('/contacts', function(req, res) {
     res.send(countries);
 });
