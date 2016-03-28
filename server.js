@@ -5,11 +5,11 @@ var express = require('express'),
 
 var app = express();
 
-var countries;
+var contacts;
 
 fs.readFile('contacts.json', 'utf8', function (err, data) {
     if (err) throw err;
-    countries = JSON.parse(data);
+    contacts = JSON.parse(data);
 });
 
 app.configure(function () {
@@ -22,7 +22,7 @@ app.configure(function () {
 app.post('/sort', function(req, res) {
 
     if (req.body.name == 'name') {
-        countries.sort(function(a, b){
+        contacts.sort(function(a, b){
             if(a.name < b.name) return -1;
             if(a.name > b.name) return 1;
             return 0;
@@ -30,7 +30,7 @@ app.post('/sort', function(req, res) {
     }
 
     if (req.body.name == 'number') {
-        countries.sort(function(a, b){
+        contacts.sort(function(a, b){
             if(a.tel < b.tel) return -1;
             if(a.tel > b.tel) return 1;
             return 0;
@@ -38,17 +38,17 @@ app.post('/sort', function(req, res) {
     }
 
     if (req.body.name == 'email') {
-        countries.sort(function(a, b){
+        contacts.sort(function(a, b){
             if(a.email < b.email) return -1;
             if(a.email > b.email) return 1;
             return 0;
         });
     }
-    res.send(countries);
+    res.send(contacts);
 });
 
 app.get('/contacts', function(req, res) {
-    res.send(countries);
+    res.send(contacts);
 });
 
 http.createServer(app).listen(app.get('port'), function () {
